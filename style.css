@@ -1,0 +1,1184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --base-color: #ddeef0;
+    --secondary-color: #34B2e1;
+    --shadow-blue: #80d0ed90;
+    --ternary-color: #0890ff;
+    --text-color: #333;
+    --pure-white: #fff;
+    --color-white: #f2f2f2;
+    --color-white-2: #f6f6f6;
+    --color-gray: #cac9c9be;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--color-white);
+}
+
+/* nav bar styling */
+nav {
+    position: fixed;
+    right: 0;
+    top: 15%;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin-right: 1em;
+}
+
+nav ul li {
+    padding: 1em;
+}
+
+nav ul li a i {
+    font-size: 1.2em !important;
+    border: 3px solid var(--ternary-color);
+    background: transparent;
+    color: var(--ternary-color);
+    padding: 1em;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+nav ul li a i:hover, nav ul li a.active i {
+    background: var(--ternary-color) !important;
+    color: #fff;
+}
+
+/* hero styling start */
+#home {
+    width: 100% !important;
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--color-white) !important;
+    border-bottom: 3px dashed var(--secondary-color);
+}
+
+.hero-content .img-div {
+    width: 50%;
+}
+
+.hero-content .img-div img {
+    width: 50%;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+}
+
+.hero-content .text-content {
+    width: fit-content;
+    top: 30%;
+    position: absolute;
+    left: 40%;
+    padding: 1em;
+}
+
+.hero-content .text-content h5 {
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.hero-content .text-content h1 {
+    font-size: 3em;
+    color: var(--text-color);
+}
+
+.hero-content .text-content h1 span {
+    color: var(--ternary-color);
+}
+
+.hero-content .text-content p {
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.hero-content .text-content p span {
+    margin-left: .5em;
+}
+
+.fade {
+    color: #0890ff;
+    position: absolute;
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
+
+.reverse {
+    animation-direction: alternate-reverse;
+}
+
+@keyframes fade {
+    0%, 33%, 66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blob {
+    margin-left: 10em;
+    margin-top: 7em;
+    position: absolute;
+    background-image: linear-gradient(120deg, #34b3e1b8 0%, #0ca0d5 100%);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    width: 450px;
+    height: 444px;
+    transform-style: preserve-3d;
+    will-change: border-radius;
+    outline: 1px solid transparent;
+    animation: morph 3s linear infinite;
+}
+
+.blob:before, .blob:after {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    box-shadow: 5px 5px 89px rgba(0, 102, 255, 0.21) !important;
+    will-change: border-radius, transform, opacity;
+    animation-delay: 200ms;
+    background-image: linear-gradient(120deg, rgba(0, 67, 255, .55)0%, rgba(0, 103, 255, .89)100%);
+}
+
+.blob::before {
+    animation: morph 3s linear infinite;
+    opacity: .21;
+    animation-duration: 1.5s;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+
+    35% {
+        border-radius: 70%, 30% 46%, 54% / 30% 29% 71%;
+    }
+
+    70% {
+        transform: translate3d(0, 5px, 0)rotateZ(0.01deg);
+    }
+
+    50% {
+        opacity: .89;
+        transform: translate3d(0, 0, 0)rotateZ(0.01deg);
+    }
+
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60%;
+    }
+
+    60% {
+        transform: translate3d(0, -3px, 0)rotateZ(0.01deg);
+    }
+}
+
+/* about section styling */
+#about {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--base-color);
+}
+
+.about-me {
+    color: var(--ternary-color);
+    font-weight: 600;
+    font-size: 3em;
+    text-align: center;
+}
+
+.about-content {
+    width: 100%;
+    margin-top: -5%;
+    height: 90%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content .img-div {
+    width: 50%;
+    margin-left: -24%;
+}
+
+.about-content .img-div img {
+    width: 100%;
+}
+
+.about-content .content-div {
+    width: 50%;
+    /* background-color: red; */
+}
+
+.about-content .content-div .card {
+    width: fit-content;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    color: var(--color-white-2);
+    border-radius: 1em;
+}
+
+.about-content .content-div h3 {
+    font-size: 3em;
+    color: var(--color-white);
+}
+
+.about-content .content-div p {
+    margin-top: 1em;
+    font-size: 1.5em;
+    width: 85%;
+}
+
+.about-content .content-div .btn-div {
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    /* background-color: red; */
+    display: flex;
+    gap: 10px;
+}
+
+.about-content .content-div .btn-div button {
+    padding: 1em;
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+    font-size: 1em;
+    background-color: transparent;
+    color: var(--secondary-color);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.content-div .btn-div button a{
+    color: var(--secondary-color);
+}
+
+.about-content .content-div .btn-div button:hover {
+    color: var(--color-white);
+    background-color: var(--ternary-color);
+    border: none;
+}
+.about-content .content-div .btn-div button:hover a{
+    color: var(--color-white);
+}
+/* portforlio section styling */
+#portforlio {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white-2);
+}
+
+#portforlio .portforlio-parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.portforlio-parent .portforlio-head {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    color: var(--secondary-color);
+    font-size: 1.5em;
+}
+
+.portforlio-parent .portforlio-child {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.portforlio-parent .portforlio-content {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 2em;
+}
+
+.portforlio-parent .portforlio-content p {
+    font-size: 1em;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+.dropCap {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.portforlio-content .tabs {
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.portforlio-content .tabs button {
+    padding: 1em;
+    width: 120px;
+    border: 1px solid var(--secondary-color);
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.portforlio-content .tabs button:nth-child(1) {
+    border-radius: .5em 0 0 .5em;
+    border-right: none;
+}
+
+.portforlio-content .tabs button:nth-child(2) {
+    border-radius: 0 .5em .5em 0;
+    border-left: none;
+}
+
+.portforlio-content .tabs button.active {
+    box-shadow: 4px 1px 53px -12px rgba(52, 178, 225, 1);
+}
+
+.portforlio-content .tabs button:hover,
+.portforlio-content .tabs button.active {
+    background-color: var(--ternary-color);
+    color: var(--color-white);
+}
+
+.portforlio-content .experience-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.portforlio-child .portforlio-content:nth-child(2) {
+    width: 70% !important;
+}
+
+.portforlio-content .experience-content {
+    /* background: var(--base-color); */
+    width: 90%;
+    padding-top: .2em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.experience-div h2 {
+    color: var(--secondary-color);
+}
+
+.experience-content .work-card {
+    border: 1px solid var(--secondary-color);
+    padding: 1em;
+    border-radius: .6em;
+    background-color: var(--base-color);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.experience-content .work-card:hover {
+    background-color: var(--shadow-blue);
+    color: var(--pure-white) !important;
+    transform: scale(1.1);
+}
+
+.experience-content .work-card .timestamp {
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.experience-content .work-card .title {
+    color: var(--secondary-color);
+    width: 85%;
+    text-align: left;
+}
+
+.experience-content .work-card p .role {
+    font-weight: bold;
+}
+
+.experience-content .work-card .exp-con {
+    color: var(--text-color);
+    font-size: .9em;
+}
+
+.experience-content:nth-child(2) {
+    width: 100%;
+    padding: 1em;
+}
+
+.experience-content:nth-child(2) .project-card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--base-color);
+    cursor: pointer;
+}
+
+.experience-content:nth-child(2) .project-card {
+    border: 3px solid var(--shadow-blue);
+    padding: 1em;
+    border-radius: .5em;
+    transition: all .3s ease;
+}
+
+.experience-content:nth-child(2) .project-card img {
+    width: 100%;
+    border-radius: .5em;
+}
+
+.experience-content:nth-child(2) .project-card:hover {
+    transform: scale(1.1);
+}
+
+#skill {
+    background-color: var(--shadow-blue);
+    width: 100%;
+    height: 100vh;
+}
+
+.skill-parent {
+    padding-top: 2em;
+    display: flex;
+}
+
+.skill-parent .skill-img .dot {
+    position: absolute;
+    margin-top: 5em;
+    left: 20%;
+    width: 10% !important;
+    z-index: 0;
+    animation: move 3s ease infinite forwards;
+}
+
+@keyframes move {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 3em;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+.skill-parent .skill-img {
+    width: 60%;
+}
+
+.skill-parent .skill-img img {
+    width: 60%;
+    position: absolute;
+    z-index: 4;
+    animation: move 3s ease infinite forwards;
+}
+
+.skill-content {
+    /* background-color: red; */
+    width: 45%;
+    margin-top: 3%;
+    margin-left: -13%;
+    padding: 1em;
+}
+
+.skill-content .skill-head {
+    background: var(--color-white-2);
+    padding: 1em;
+    border-radius: 10px 10px 0 0;
+}
+
+.skill-content .skill-head h2 {
+    font-size: 3em;
+    color: var(--ternary-color);
+}
+
+.skill-content .skill-head p {
+    font-size: 1.3em;
+    color: var(--secondary-color);
+}
+
+.skill-content .skill-set {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: var(--color-white-2);
+    padding-bottom: .5em;
+    border-radius: 0 0 10px 10px;
+    z-index: 10;
+    padding: 1em;
+    
+}
+
+.skill-content .skill-set img {
+    width: 15%;
+    height: auto;
+    padding: .5em;
+    border-radius: 10px;
+    box-shadow: -2px 5px 89px -7px rgba(125, 196, 244, 0.612);
+    animation: fadeIn ease-in-out 3s;
+    animation-iteration-count: 1;
+    cursor: pointer;
+    z-index: 5;
+
+}
+.skill-content .skill-set img:hover{
+    transform: scale(1.1);
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contact {
+    width: 100%;
+    background-color: var(--color-base);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+#contact h1 {
+    width: 100%;
+    /* background: red; */
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+#contact .contact-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact .contact-content div h4,
+#contact .contact-content div ul li a {
+    color: var(--text-color);
+}
+
+#contact .contact-content div ul li a:hover {
+    color: var(--ternary-color);
+}
+.copyrights{
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: var(--text-color);
+}
+/* media queries */
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+    #home, #about, #portforlio, #skill {
+        /* background-color: pink !important; */
+        width: 100%;
+        height: 120vh !important;
+    }
+
+    #portforlio, #skill, #contact {
+        height: fit-content !important;
+    }
+
+    nav {
+        position: fixed;
+        right: 0;
+        top: 25%;
+    }
+
+    nav ul {
+        list-style: none;
+        margin-right: 1em !important;
+    }
+
+    nav ul li a i {
+        font-size: .8em !important;
+    }
+
+    .blob {
+        width: 150px;
+        height: 144px;
+    }
+
+    #home {
+        overflow: hidden !important;
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home .blob {
+        position: absolute;
+        margin-left: -10%;
+        width: 350px;
+        height: 344px;
+        top: -10%;
+        opacity: .4;
+    }
+
+    #home .hero-content {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .hero-content .img-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        padding: 0;
+        margin-top: 30%;
+    }
+
+    .hero-content .img-div img {
+        width: 200%;
+        position: relative;
+        margin-left: 0%;
+    }
+
+    .hero-content .text-content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 12%;
+        width: 100%;
+        left: 20%;
+    }
+
+    .hero-content .text-content h5,
+    .hero-content .text-content p,
+    .hero-content .text-content span {
+        font-size: 1em;
+    }
+
+    .hero-content .text-content span,
+    .hero-content .text-content h1 span {
+        color: var(--color-white);
+    }
+
+    .hero-content .text-content h1 {
+        font-size: 1.5em;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-me {
+        margin-top: 2em;
+    }
+
+    .about-content .content-div {
+        width: 100%;
+        font-size: 1em;
+        margin: 0;
+    }
+
+    .about-content .content-div .card {
+        margin-top: -7em !important;
+
+    }
+
+    .about-content .content-div .card h3 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .about-content .content-div .card p {
+        font-size: 1em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .about-content .img-div {
+        width: 100%;
+        /* display: none; */
+    }
+
+    .about-content .img-div img {
+        width: 100%;
+        margin: 0;
+        position: relative;
+        margin-left: -50px;
+    }
+
+    .content-div .btn-div {
+        margin-left: 5em;
+        font-size: .9em;
+        position: relative;
+        width: 60% !important;
+        margin-left: 25%;
+        /* background-color: red; */
+        display: flex;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        z-index: 4;
+    }
+
+    .content-div .btn-div button {
+        width: 140px;
+        height: fit-content;
+        position: absolute;
+        margin-top: -30% !important;
+        font-size: .9em !important;
+    }
+    #portforlio .portforlio-parent {
+        margin-top: 5em;
+        display: flex;
+    }
+
+    .portforlio-child {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .portforlio-child .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portforlio-child .portforlio-content {
+        width: 100%;
+    }
+
+    .portforlio-child .portforlio-content:nth-child(2) {
+        /* background-color: red; */
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .experience-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .experience-div .experience-content {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    #skill {
+        width: 100%;
+        /* background-color: red; */
+        height: 110vh !important;
+    }
+
+    .skill-parent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-parent .skill-img {
+        width: 100%;
+        height: 100%;
+        position: relative !important;
+        margin-left: 0;
+        height: fit-content;
+    }
+
+    .skill-parent .skill-img img {
+        width: 100%;
+    }
+
+    .skill-parent .skill-img .dot {
+        margin-left: 18%;
+    }
+
+    .skill-content {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15em;
+        /* display: none; */
+    }
+
+    .skill-content .skill-head h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .skill-content .skill-head p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact h1 {
+        font-size: 1em;
+    }
+
+    #contact .contact-content {
+        width: fit-content;
+        /* background: red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1em;
+    }
+
+    #contact .contact-content h4,
+    #contact .contact-content ul li a {
+        font-size: .8em;
+    }
+
+    .useful{
+        display: flex !important;
+    }
+
+}
+
+/* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #home, #about, #portforlio, #skill {
+        /* background-color: red !important; */
+        width: 100%;
+        height: 100vh;
+    }
+
+    #portforlio {
+        height: 120vh !important;
+    }
+
+    #home .blob {
+        width: 450px;
+        height: 444px;
+        left: 10%;
+    }
+
+    #home .hero-content .img-div {
+        width: 50%;
+        height: 100%;
+    }
+
+    #home .hero-content .img-div img {
+        width: 100%;
+        left: -30%;
+    }
+
+    .hero-content .text-content {
+        margin-left: -5%;
+    }
+
+    .hero-content .text-content h5,
+    .hero-content .text-content p,
+    .hero-content .text-content span {
+        font-size: 1em;
+    }
+
+    .hero-content .text-content span,
+    .hero-content .text-content h1 span {
+        color: var(--color-white);
+    }
+
+    .hero-content .text-content h1 {
+        font-size: 2.5em;
+    }
+
+    #about .content-div {
+        width: fit-content;
+        height: fit-content;
+        margin-left: 5em;
+    }
+
+    .about-content .content-div .card {
+        width: 70%;
+        height: 50%;
+    }
+
+    .about-content .content-div .card h3 {
+        font-size: 2em;
+    }
+
+    .about-content .content-div .card p {
+        font-size: 1em;
+    }
+
+    .about-content .img-div img {
+        width: 180%;
+        margin-left: -75%;
+    }
+
+    .about-content .btn-div button {
+        height: fit-content;
+    }
+
+    .portforlio-child {
+        display: flex;
+        background-color: purple;
+        flex-direction: column;
+        gap: 0;
+        justify-content: center;
+    }
+
+    .portforlio-child .portforlio-content {
+        width: 100% !important;
+        margin: 0;
+        /* background-color: red; */
+    }
+
+    .portforlio-child .portforlio-content:nth-child(1) {
+        text-align: center;
+        padding: 1em 4.5em;
+    }
+
+    .portforlio-child .portforlio-content:nth-child(1) p {
+        font-size: 1em;
+
+    }
+
+    .portforlio-child .portforlio-content:nth-child(2) {
+        width: 100% !important;
+    }
+
+    .portforlio-child .portforlio-content:nth-child(2) .experience-content {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .work-card {
+        height: 220px;
+    }
+
+    .work-card p {
+        font-size: .7em !important;
+    }
+
+    .skill-parent {
+        margin-top: 30%;
+        width: 100%;
+        /* background-color:blue; */
+        height: fit-content;
+        display: flex;
+        position: absolute;
+    }
+
+    .skill-parent .skill-img {
+        margin-left: -15%;
+    }
+
+    .skill-parent .skill-content {
+        width: 60%;
+    }
+
+    .skill-parent .skill-content .skill-head h2 {
+        font-size: 1.2em;
+    }
+
+    .skill-parent .skill-content .skill-head p {
+        font-size: 1em;
+    }
+
+    #contact .contact-content {
+        width: 100%;
+        /* background: red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+        gap: 1em;
+    }
+
+    #contact .contact-content h4,
+    #contact .contact-content ul li a {
+        font-size: .8em;
+    }
+
+    .useful li,
+    .give-coffee li {
+        display: flex;
+    }
+}
+
+/* Media query for desktops */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    /* Styles specific to desktops */
+    #home, #about, #portforlio, #skill {
+        /* background-color: purple !important; */
+        width: 100%;
+        height: 100vh;
+    }
+
+    #portforlio {
+        height: fit-content;
+    }
+
+    .blob {
+        width: 344px;
+        height: 350px;
+    }
+
+    .about-content {
+        margin-top: 0;
+    }
+
+    .about-content .img-div {
+        width: 100%;
+        margin-left: -30%;
+    }
+
+    .about-content .content-div {
+        width: fit-content;
+        margin-left: 5em;
+        height: 60%;
+    }
+
+    .about-content .content-div .card {
+        width: fit-content;
+    }
+
+    .about-content .content-div .card h3 {
+        font-size: 2em;
+    }
+
+    .about-content .content-div .card p {
+        font-size: 1em;
+    }
+
+    .about-content .btn-div button {
+        height: fit-content;
+    }
+
+    .portforlio-child .portforlio-content:nth-child(1) {
+        /* background-color: red; */
+        width: 35%;
+        margin-top: 3em;
+    }
+
+    .experience-div .experience-content {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .experience-div .experience-content .work-card .timestamp,
+    .experience-div .experience-content .work-card .title,
+    .experience-div .experience-content .work-card .exp-con {
+        font-size: .65em;
+    }
+
+    .skill-parent {
+        display: flex;
+    }
+
+    .skill-parent .skill-img {
+        margin-left: -10%;
+    }
+
+    .skill-parent .skill-img .dot {
+        margin-left: -10%;
+    }
+
+    .skill-content .skill-head h2 {
+        font-size: 2em;
+    }
+
+    .skill-content .skill-head p {
+        font-size: 1em;
+    }
+}
+
+/* Media query for large desktops */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    #home, #about, #portforlio {
+        background-color: yellow !important;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+/* Media query for 4K screens */
+@media screen and (min-width: 1440px) {
+    #home, #about, #portforlio {
+        /* background-color: blue !important; */
+        width: 100%;
+        height: 100vh;
+    }
+
+    #portforlio {
+        height: fit-content;
+    }
+
+    #about {
+        /* background-color: yellow; */
+        width: 100%;
+        height: 100vh;
+    }
+
+    .about-content {
+        margin-top: 0;
+    }
+
+    .experience-content:nth-child(2) {
+        /* background-color: red; */
+        width: 90%;
+    }
+
+    .project-card {
+        padding: .1em;
+    }
+
+    .project-card img {
+        width: 100%;
+    }
+}
